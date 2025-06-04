@@ -3,17 +3,26 @@
     "description": "Dynamic settings system for Laravel 12 with multi-level support",
     "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "BrucePull\\SettingsPackage\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Bruce Oliva",
             "email": "bruce@pull.srl"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0",
+        "illuminate/database": "^12.0",
+        "illuminate/cache": "^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BrucePull\\SettingsPackage\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
 }
