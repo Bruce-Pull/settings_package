@@ -1,0 +1,19 @@
+{
+    "name": "bruce-pull/settings-package",
+    "description": "Dynamic settings system for Laravel 12 with multi-level support",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BrucePull\\SettingsPackage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bruce Oliva",
+            "email": "bruce@pull.srl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
