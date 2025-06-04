@@ -2,11 +2,20 @@
 
 namespace BrucePull\SettingsPackage\Services;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
+use BrucePull\SettingsPackage\Services\Concerns\HandlesSchema;
+use BrucePull\SettingsPackage\Services\Concerns\HandlesRetrieval;
+use BrucePull\SettingsPackage\Services\Concerns\HandlesValidation;
+use BrucePull\SettingsPackage\Services\Concerns\HandlesPersistence;
 
 class SettingService
 {
+    use HandlesRetrieval;
+    use HandlesPersistence;
+    use HandlesSchema;
+    use HandlesValidation;
+
     private array $availableSettings;
     private int $cacheDuration;
     private string $cacheKey = '';
