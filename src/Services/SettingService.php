@@ -30,6 +30,23 @@ class SettingService
         $this->cacheDuration = $cacheDuration;
     }
 
+
+    /**
+     * @method get(string $key, ?int $facilityId = null, ?int $userId = null) Alias of getSettingValue()
+     */
+    public function get(...$args)
+    {
+        return $this->getSettingValue(...$args);
+    }
+
+    /**
+     * @method set(string $key, mixed $value) Alias of setSetting()
+     */
+    public function set(...$args)
+    {
+        return $this->setSetting(...$args);
+    }
+
     /**
      * Clear cache based on the provided key
      *
