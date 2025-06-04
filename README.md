@@ -89,10 +89,10 @@ php artisan migrate
 use TuUsuario\LaravelSettings\Facades\Settings;
 
 // Get a value
-$theme = Settings::getSettingValue('theme');
+$theme = Settings::get('theme');
 
 // Set a value
-Settings::setSetting('theme', 'dark', SettingLevel::USER);
+Settings::setSetting('theme', 'dark', SettingLevel::USER, 1);
 ```
 
 ### Using the Helper
@@ -101,8 +101,8 @@ Settings::setSetting('theme', 'dark', SettingLevel::USER);
 // Get a value with default
 $language = setting('language', 'es');
 
-// Get the settings service
-$service = setting();
+// Get the settings service to access to any of its methods
+$service = setting()->getProcessedSettings();
 ```
 
 ---
