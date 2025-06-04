@@ -37,6 +37,11 @@ class SettingsServiceProvider extends ServiceProvider
 
         // Register service alias for convenient access
         $this->app->alias(SettingService::class, 'laravel-settings');
+
+        // Register package helpers
+        if (file_exists(__DIR__ . '/../helpers.php')) {
+            require_once __DIR__ . '/../helpers.php';
+        }
     }
 
     /**

@@ -1,6 +1,6 @@
 {
     "name": "bruce-pull/settings-package",
-    "description": "Dynamic settings system for Laravel 12 with multi-level support",
+    "description": "A dynamic settings system for Laravel with multi-level support.",
     "type": "library",
     "license": "MIT",
     "authors": [
