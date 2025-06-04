@@ -27,5 +27,20 @@
             "src/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "BrucePull\\SettingsPackage\\Tests\\Unit\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BrucePull\\SettingsPackage\\Providers\\SettingsServiceProvider"
+            ],
+            "aliases": {
+                "Settings": "BrucePull\\SettingsPackage\\Facades\\Settings"
+            }
+        }
+    },
     "minimum-stability": "dev"
 }
