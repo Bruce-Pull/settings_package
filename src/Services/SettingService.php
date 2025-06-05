@@ -31,7 +31,6 @@ class SettingService
         $this->cacheDuration = $cacheDuration;
     }
 
-
     /**
      * @method get(string $key, ?int $facilityId = null, ?int $userId = null) Alias of getSettingValue()
      */
@@ -48,6 +47,11 @@ class SettingService
         return $this->setSetting(...$args);
     }
 
+    /**
+     * Get all available setting levels
+     * 
+     * @return array
+     */
     public function getLevels(): array
     {
         return LevelResolver::getlevels();
