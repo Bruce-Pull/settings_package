@@ -68,7 +68,7 @@ php artisan vendor:publish --provider="TuUsuario\LaravelSettings\Providers\Setti
 Move the generated migration file to the appropriate tenant migration folder if you're using multi-tenancy:
 
 ```bash
-cp database/migrations/tenant/2023_01_01_000000_create_settings_table.php database/migrations/tenant/2023_01_01_000000_create_settings_table.php
+cp database/migrations/tenant/create_settings_table.php database/migrations/tenant/create_settings_table.php
 ```
 
 ---
