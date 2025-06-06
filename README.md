@@ -48,7 +48,7 @@ composer require bruce-pull/settings-package:dev-main
 ### Step 3: Publish the Configuration File
 
 ```bash
-php artisan vendor:publish --provider="TuUsuario\LaravelSettings\Providers\SettingsServiceProvider" --tag="settings-config"
+php artisan vendor:publish --tag="settings-config"
 ```
 
 This file contains the default settings structure. You can freely add, edit, or delete settings according to your needs.
@@ -58,7 +58,7 @@ This file contains the default settings structure. You can freely add, edit, or 
 ### Step 4: Publish the Migrations
 
 ```bash
-php artisan vendor:publish --provider="TuUsuario\LaravelSettings\Providers\SettingsServiceProvider" --tag="settings-migrations"
+php artisan vendor:publish --tag="settings-migrations"
 ```
 
 ---
@@ -86,7 +86,8 @@ php artisan migrate
 ### Using the Facade
 
 ```php
-use TuUsuario\LaravelSettings\Facades\Settings;
+use BrucePull\SettingsPackage\Facades\Settings;
+use BrucePull\SettingsPackage\Enums\SettingLevel;
 
 // Get a value
 $theme = Settings::get('theme');
@@ -101,13 +102,16 @@ Settings::setSetting('theme', 'dark', SettingLevel::USER, 1);
 // Get a value with default
 $language = setting('language', 'es');
 
+$user = auth()->user();
+$facilityId = $user->facility_id;
+
 // Get the settings service to access to any of its methods
-$service = setting()->getProcessedSettings();
+$settings = setting()->getProcessedSettings($facilityId, $user->id);
 ```
 
 ---
 
-## Important Notes
+## Important Notes for Multi-tenancy
 
 * In a multi-tenant context, use Redis or another cache store that supports tagging:
 
